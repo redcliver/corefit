@@ -3791,3 +3791,23 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-06-06T21:03:06: Saving group "c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\pytz"
 2018-06-06T21:03:06: End of group "c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\pytz"
 2018-06-06T21:03:09: Deleting 0 files
+
+2018-06-08T15:31:13: Start analysis
+2018-06-08T15:31:13: IncludeModulesFromModulePath = win32com
+2018-06-08T15:31:15: Including c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting because django_fingerprinting.__init__ needs updating
+2018-06-08T15:31:16: Deleting 0 files
+2018-06-08T15:31:16: astropy.CallDepth = 0
+2018-06-08T15:31:16: delphixpy.CallDepth = 0
+2018-06-08T15:31:16: matplotlib.CallDepth = 3
+2018-06-08T15:31:16: pandas.CallDepth = 0
+2018-06-08T15:31:16: sympy.CallDepth = 0
+2018-06-08T15:31:16: Start group "c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting" with 3 files
+2018-06-08T15:31:16: Parsing complete
+2018-06-08T15:31:16: Analyzing "django_fingerprinting" ("c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting\__init__.py")
+2018-06-08T15:31:16: Analyzing "django_fingerprinting.templatetags.fingerprinting" ("c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting\templatetags\fingerprinting.py")
+2018-06-08T15:31:16: Analyzing "django_fingerprinting.templatetags" ("c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting\templatetags\__init__.py")
+2018-06-08T15:31:16: Starting analysis of 3 modules
+2018-06-08T15:31:17: Analysis complete
+2018-06-08T15:31:17: Saving group "c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting"
+2018-06-08T15:31:17: End of group "c:\users\igor-\source\repos\corefit\corefit\env\lib\site-packages\django_fingerprinting"
+2018-06-08T15:31:19: Deleting 0 files

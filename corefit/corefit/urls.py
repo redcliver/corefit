@@ -10,13 +10,13 @@ import app.forms
 import app.views
 
 # Uncomment the next lines to enable the admin:
-# from django.conf.urls import include
+from django.conf.urls import include
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = [
     # Examples:
-    url(r'^$', app.views.home, name='home'),
+    url(r'', include('home.urls')),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',

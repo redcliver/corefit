@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app',
+    'home',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_fingerprinting',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -124,3 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+FINGERPRINTING = {
+    'css/global.css': 'css/global-234f-2321db-74fce-34de.css'
+}
