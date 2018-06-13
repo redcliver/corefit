@@ -273,6 +273,7 @@
     <Content Include="home\static\vendor\select2\select2.min.css" />
     <Content Include="home\static\vendor\select2\select2.min.js" />
     <Content Include="home\templates\base.html" />
+    <Content Include="home\templates\home\erro.html" />
     <Content Include="home\templates\home\home.html" />
     <Content Include="home\templates\home\login.html" />
     <Content Include="outro\templates\outro.html" />
