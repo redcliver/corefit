@@ -34,6 +34,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'app',
     'home',
+    'presenca',
+    'paciente',
+    'outro',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,3 +133,5 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 FINGERPRINTING = {
     'css/global.css': 'css/global-234f-2321db-74fce-34de.css'
 }
+
+LOGIN_REDIRECT_URL = '/home'

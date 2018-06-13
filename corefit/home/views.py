@@ -7,4 +7,4 @@ def home(request):
         name = request.POST.get(name)
         img = request.POST.get(img)
 
-    return render(request, 'index.html', {'content':'Funcionando'})
+    return render(request, 'home/home.html', {'title':'Home'})

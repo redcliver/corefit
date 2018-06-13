@@ -5,6 +5,7 @@ Definition of urls for corefit.
 from datetime import datetime
 from django.conf.urls import url
 import django.contrib.auth.views
+from django.contrib.auth.views import login
 
 import app.forms
 import app.views
@@ -16,7 +17,11 @@ from django.conf.urls import include
 
 urlpatterns = [
     # Examples:
-    url(r'', include('home.urls')),
+    url(r'^$', login, {'template_name': 'home/login.html'}),
+    url(r'^home/', include('home.urls')),
+    url(r'^presenca/', include('presenca.urls')),
+    url(r'^paciente/', include('paciente.urls')),
+    url(r'^outros/', include('outro.urls')),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',
