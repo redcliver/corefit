@@ -12,8 +12,8 @@ import app.views
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = [
     # Examples:
@@ -22,6 +22,9 @@ urlpatterns = [
     url(r'^presenca/', include('presenca.urls')),
     url(r'^paciente/', include('paciente.urls')),
     url(r'^outros/', include('outro.urls')),
+    url(r'^caixa/', include('caixa.urls')),
+    url(r'^plano/', include('plano.urls')),
+    url(r'^conta/', include('conta.urls')),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',
@@ -47,5 +50,5 @@ urlpatterns = [
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 ]

@@ -1,29 +1,157 @@
+﻿<!DOCTYPE html>
 
-{% extends 'base.html' %}
-{% block body %}
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar menu-lateral">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/home" style="background-color: #599a80;">Presenca <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-         </nav>
-        </div>
-    </div>
-<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main-fundo">
-    <section class="row text-center placeholders">
-        <div class="jumbotron busca">
-            <div class="container">
-                {% if msg %}
-                    <h2>{{msg}}</h2>
-                {% else %}
-                    <h3>Presenca</h3>
-                    <hr />
-                {% endif %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sistema de controle de clinica">
+    <meta name="author" content="Igor Peres">
+    <title>{{title}} - Core Fit - Pilates</title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static '../img/icons/icone.ico' %}" type="image/x-icon" />
+    <!-- Custom styles for this template -->
+    <style type="text/css" >
+        body {
+            padding-top: 54px;
+            background-image: url('../../static/img/fundo1.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #000000;
+        }
+        .side-btn {
+            margin-right: inherit;
+        }
+        @media (min-width: 992px) {
+            body {
+                padding-top: 56px;
+                background-image: url('../../static/img/fundo1.jpg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                background-size: cover;
+                background-color: #000000;
+            }
+            .fundo {
+                background-color: #f2f9ff;
+            }
+            .menu-lateral {
+                background-color: #f2f9ff;
+                padding-top: 56px;
+                position: fixed;
+                top: 51px;
+                bottom: 0;
+                border-right: 2px solid #0b764c;
+                color: #ffffff;
+            }
+            .navbar {
+                border-bottom: 3px solid #0b764c;
+            }
+            li a {
+                color: #ffffff;
+            }
+                li a:hover {
+                    color: #a6a6a8;
+                }
+            .active {
+                background-color: #599a80;
+                color: white;
+            }
+            .main-fundo {
+                background-color: rgba(181, 179, 179, 0.5);
+                position: fixed;
+                top: 80px;
+                bottom: 0;
+                color: #e0e0e0;
+            }
+            .jumbotron {
+                position: sticky;
+                text-align: left;
+                margin-left: 30px;
+                margin-top: 50px;
+                color: #0b2f21;
+                min-height: 450px;
+            }
+            .busca {
+                min-width: 70%;
+                max-width: 85%;
+            }
+            .verm {
+                color:red;
+            }
+            .verd {
+                color:green;
+            }
+            .fundo_v {
+                background-color: #f44444;
+                border-color :#9e2525;
+            }
+            .fundo_v:hover{
+                background-color: #9e2525;
+                border-color :#9e2525;
+            }
+        }
+    </style>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+        function check() {
+            var today = new Date();
+            var h = today.getHours();
+            var teste
+            if (h < 12) { teste = "Bom Dia" }
+            if (h > 12 && h < 18) { teste = "Boa Tarde" }
+            if (h > 18) { teste = "Boa Noite" }
+            document.getElementById('teste1').innerHTML = teste
+        }
+    </script>
+</head>
+
+<body onload="startTime()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fundo fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/home"><img src="{% static '/img/Logo.png' %}" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="ml-auto" id="txt" style="font-size: 30px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);"></div>
+                
             </div>
         </div>
-    </section>
-</main>
-        {% endblock %}
+    </nav>
+    <div class="container marketing">
+     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 ">
+        <section class="row text-center placeholders">
+            <div class="jumbotron busca">
+                <div class="container">
+                    <h4>Aproxime o dedo cadastrado no leitor.</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+        </div>
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

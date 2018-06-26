@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar menu-lateral">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros" style="color: #599a80;">Outros <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/plano" style="color: #599a80;">Planos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/profissionais" style="color: #599a80;">Profissionais <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/balanco" style="color: #599a80;">Balanco <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/anual" style="color: #599a80;">- Anual <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/trimestral" style="color: #599a80;">- Trimestral <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/outros/mensal" style="background-color: #599a80;">- Mensal <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/diario" style="color: #599a80;">- Diario <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/conta" style="color: #599a80;">Contas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/caixa" style="color: #599a80;">Caixa <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+         </nav>
+        </div>
+    </div>
+<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main-fundo">
+    <section class="row text-center placeholders">
+        <div class="jumbotron busca">
+            <div class="container">
+                <div class="container">
+                    <input type="hidden" id="yFat" value="{{fat| stringformat:'d'}}" />
+                    <input type="hidden" id="yCus" value="{{cus| stringformat:'d'}}" />
+                    <input type="hidden" id="yLuc" value="{{luc| stringformat:'d'}}" />
+                    <div id="chartContainer" style="height: 300px; width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script type="text/javascript">
+    yFat = Number(document.getElementById('yFat').value);
+    yCus = Number(document.getElementById('yCus').value);
+    yLuc = Number(document.getElementById('yLuc').value);
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+            {
+                title:{
+                text: "Balanco Mensal"
+            },
+            data: [
+            {
+                type: "column", //change type to bar, line, area, pie, etc
+                dataPoints: [
+                    { y: yFat, label: "Faturamento" },
+                    { y: yLuc, label: "Lucro" },
+                    { y: yCus, label: "Custo" },
+
+                ]
+            }
+            ]
+        });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        {% endblock %}

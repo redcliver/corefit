@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'presenca',
     'paciente',
     'outro',
+    'plano',
+    'conta',
+    'caixa',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
