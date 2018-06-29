@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^caixa/', include('caixa.urls')),
     url(r'^plano/', include('plano.urls')),
     url(r'^conta/', include('conta.urls')),
+    url(r'^agenda/', include('agenda.urls')),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',

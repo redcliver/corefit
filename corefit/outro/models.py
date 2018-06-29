@@ -9,5 +9,5 @@ class professor(models.Model):
     celular = models.CharField(max_length=20, null=True, blank=True)
     data_nasc = models.DateField(null=True, blank=True, default=False)
 
-    def __str__(self):
-        return self.nome
+    def __unicode__(self):
+        return self.id

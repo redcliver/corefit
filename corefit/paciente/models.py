@@ -13,12 +13,12 @@ class paciente(models.Model):
     telefone = models.CharField(max_length=20, null=True, blank=True)
     celular = models.CharField(max_length=20, null=True, blank=True)
     data_nasc = models.DateField(null=True, blank=True, default=False)
-    profissional = models.ForeignKey(professor,null=True, blank=True)
-    plan = models.ForeignKey(plano)
     data_venc = models.DateField(null=True, blank=True, default=False)
     queixa = models.CharField(max_length=500, null=True, blank=True)
     objetivo = models.CharField(max_length=500, null=True, blank=True)
     ativo = models.CharField(max_length=1, choices=OPCAO)
+    prof1 = models.ForeignKey(professor)
+    plan1 = models.ForeignKey(plano)
 
     def __str__(self):
         return self.nome

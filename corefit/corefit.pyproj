@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>corefit</Name>
     <RootNamespace>corefit</RootNamespace>
-    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,6 +31,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="agenda\admin.py" />
+    <Compile Include="agenda\apps.py" />
+    <Compile Include="agenda\migrations\__init__.py" />
+    <Compile Include="agenda\models.py" />
+    <Compile Include="agenda\tests.py" />
+    <Compile Include="agenda\urls.py" />
+    <Compile Include="agenda\views.py" />
+    <Compile Include="agenda\__init__.py" />
     <Compile Include="app\admin.py" />
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
@@ -103,6 +111,9 @@
     <Compile Include="presenca\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="agenda\" />
+    <Folder Include="agenda\migrations\" />
+    <Folder Include="agenda\templates\" />
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\static\" />
@@ -167,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="agenda\templates\agenda.html" />
     <Content Include="caixa\templates\retirada.html" />
     <Content Include="caixa\templates\fechar.html" />
     <Content Include="caixa\templates\entrada.html" />
@@ -377,23 +389,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env1\">
-      <Id>env1</Id>
+    <Interpreter Include="env\">
+      <Id>env</Id>
       <Version>3.6</Version>
-      <Description>env1 (Python 3.6 (64-bit))</Description>
+      <Description>env (Python 3.6 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
-    </Interpreter>
-    <Interpreter Include="env\">
-      <Id>env</Id>
-      <Version>3.6</Version>
-      <Description>env (Python 3.6 (32-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />

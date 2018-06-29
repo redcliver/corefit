@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'plano',
     'conta',
     'caixa',
+    'agenda',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,3 +139,4 @@ FINGERPRINTING = {
 }
 
 LOGIN_REDIRECT_URL = '/home'
+

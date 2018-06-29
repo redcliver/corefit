@@ -6,9 +6,10 @@ from decimal import Decimal
 # Create your views here.
 
 def conta1(request):
-
-    return render(request, 'conta.html', {'title':'Contas'})
-
+    if request.user.is_authenticated():
+        return render(request, 'conta.html', {'title':'Contas'})
+    else:
+        return render(request, 'home/erro.html', {'title':'Erro'})
 def nova(request):
     if request.user.is_authenticated():
         if request.method == 'POST' and request.POST.get('name') != None:
