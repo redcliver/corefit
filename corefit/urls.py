@@ -17,7 +17,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     # Examples:
-    url(r'^$', login, {'template_name': 'home/login.html'}),
+    url(r'^/$', login, {'template_name': 'home/login.html'}),
     url(r'^home/', include('home.urls')),
     url(r'^presenca/', include('presenca.urls')),
     url(r'^paciente/', include('paciente.urls')),
