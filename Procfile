@@ -1,1 +1,1 @@
-web: gunicorn corefit.wsgi --log-file --
+web: gunicorn corefit.wsgi 
