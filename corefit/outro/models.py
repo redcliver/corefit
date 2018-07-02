@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 class professor(models.Model):
@@ -7,7 +7,6 @@ class professor(models.Model):
     nome = models.CharField(max_length=200)
     telefone = models.CharField(max_length=20, null=True, blank=True)
     celular = models.CharField(max_length=20, null=True, blank=True)
-    data_nasc = models.DateField(null=True, blank=True, default=False)
+    data_nasc = models.DateField(default=timezone.now)
 
-    def __unicode__(self):
-        return self.id
+   

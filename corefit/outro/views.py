@@ -2,8 +2,7 @@ from django.shortcuts import render
 from caixa.models import caixa_geral
 from .models import professor
 from django.utils import timezone
-from datetime import datetime, timedelta
-
+from datetime import timedelta
 # Create your views here.
 def outro(request):
     if request.user.is_authenticated():
