@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar menu-lateral">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros" style="color: #599a80;">Outros <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/plano" style="color: #599a80;">Planos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/profissionais" style="color: #599a80;">Profissionais <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/balanco" style="color: #599a80;">Balanco <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/conta" style="color: #599a80;">Contas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/caixa" style="color: #599a80;">Caixa <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/caixa/entrada" style="color: #599a80;">- Entrada <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/caixa/retirada" style="color: #599a80;">- Retirada <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/caixa/fechar" style="background-color: #599a80;">- Fechar Caixa <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+         </nav>
+        </div>
+    </div>
+<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main-fundo">
+    <section class="row text-center placeholders">
+        <div class="jumbotron busca">
+            <div class="container">
+                 <form method="POST" class="col-md-12 col-md-offset-3">
+                    {% csrf_token %}
+                    <h3>Valor total em caixa : R$ {{caixa.total}}</h3>
+                    <br />
+                    <br />
+                    Valor da retirada : <input class="form-control col-md-4 " type="number" name="fechamento" step="0.01" autofocus required/>
+                    <br />
+                    <br />
+                    <button class="btn btn-primary" type="submit" style="background-color: #599a80; border-color:#235440;">Fechar</button>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+        {% endblock %}

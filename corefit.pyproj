@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>corefit</Name>
+    <RootNamespace>corefit</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8d9bed3b-f868-46f5-98cd-71923d3f1d28</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>corefit.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="agenda\admin.py" />
+    <Compile Include="agenda\apps.py" />
+    <Compile Include="agenda\migrations\__init__.py" />
+    <Compile Include="agenda\models.py" />
+    <Compile Include="agenda\tests.py" />
+    <Compile Include="agenda\urls.py" />
+    <Compile Include="agenda\views.py" />
+    <Compile Include="agenda\__init__.py" />
+    <Compile Include="app\admin.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="caixa\admin.py" />
+    <Compile Include="caixa\apps.py" />
+    <Compile Include="caixa\migrations\__init__.py" />
+    <Compile Include="caixa\models.py" />
+    <Compile Include="caixa\tests.py" />
+    <Compile Include="caixa\urls.py" />
+    <Compile Include="caixa\views.py" />
+    <Compile Include="caixa\__init__.py" />
+    <Compile Include="conta\admin.py" />
+    <Compile Include="conta\apps.py" />
+    <Compile Include="conta\migrations\__init__.py" />
+    <Compile Include="conta\models.py" />
+    <Compile Include="conta\tests.py" />
+    <Compile Include="conta\urls.py" />
+    <Compile Include="conta\views.py" />
+    <Compile Include="conta\__init__.py" />
+    <Compile Include="home\admin.py" />
+    <Compile Include="home\apps.py" />
+    <Compile Include="home\migrations\__init__.py" />
+    <Compile Include="home\models.py" />
+    <Compile Include="home\tests.py" />
+    <Compile Include="home\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="home\views.py" />
+    <Compile Include="home\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="corefit\__init__.py" />
+    <Compile Include="corefit\settings.py" />
+    <Compile Include="corefit\urls.py" />
+    <Compile Include="corefit\wsgi.py" />
+    <Compile Include="outro\admin.py" />
+    <Compile Include="outro\apps.py" />
+    <Compile Include="outro\migrations\__init__.py" />
+    <Compile Include="outro\models.py" />
+    <Compile Include="outro\tests.py" />
+    <Compile Include="outro\urls.py" />
+    <Compile Include="outro\views.py" />
+    <Compile Include="outro\__init__.py" />
+    <Compile Include="paciente\admin.py" />
+    <Compile Include="paciente\apps.py" />
+    <Compile Include="paciente\migrations\__init__.py" />
+    <Compile Include="paciente\models.py" />
+    <Compile Include="paciente\tests.py" />
+    <Compile Include="paciente\urls.py" />
+    <Compile Include="paciente\views.py" />
+    <Compile Include="paciente\__init__.py" />
+    <Compile Include="plano\admin.py" />
+    <Compile Include="plano\apps.py" />
+    <Compile Include="plano\migrations\__init__.py" />
+    <Compile Include="plano\models.py" />
+    <Compile Include="plano\tests.py" />
+    <Compile Include="plano\urls.py" />
+    <Compile Include="plano\views.py" />
+    <Compile Include="plano\__init__.py" />
+    <Compile Include="presenca\admin.py" />
+    <Compile Include="presenca\apps.py" />
+    <Compile Include="presenca\migrations\__init__.py" />
+    <Compile Include="presenca\models.py" />
+    <Compile Include="presenca\tests.py" />
+    <Compile Include="presenca\urls.py" />
+    <Compile Include="presenca\views.py" />
+    <Compile Include="presenca\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="agenda\" />
+    <Folder Include="agenda\migrations\" />
+    <Folder Include="agenda\templates\" />
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="caixa\" />
+    <Folder Include="caixa\migrations\" />
+    <Folder Include="caixa\templates\" />
+    <Folder Include="conta\" />
+    <Folder Include="conta\migrations\" />
+    <Folder Include="conta\templates\" />
+    <Folder Include="corefit\" />
+    <Folder Include="home\" />
+    <Folder Include="home\migrations\" />
+    <Folder Include="home\static\" />
+    <Folder Include="home\static\css\" />
+    <Folder Include="home\static\fonts\" />
+    <Folder Include="home\static\fonts\font-awesome-4.7.0\" />
+    <Folder Include="home\static\fonts\font-awesome-4.7.0\css\" />
+    <Folder Include="home\static\fonts\font-awesome-4.7.0\fonts\" />
+    <Folder Include="home\static\fonts\font-awesome-4.7.0\less\" />
+    <Folder Include="home\static\fonts\font-awesome-4.7.0\scss\" />
+    <Folder Include="home\static\fonts\Linearicons-Free-v1.0.0\" />
+    <Folder Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\" />
+    <Folder Include="home\static\fonts\poppins\" />
+    <Folder Include="home\static\img\" />
+    <Folder Include="home\static\img\icons\" />
+    <Folder Include="home\static\js\" />
+    <Folder Include="home\static\vendor\" />
+    <Folder Include="home\static\vendor\animate\" />
+    <Folder Include="home\static\vendor\animsition\" />
+    <Folder Include="home\static\vendor\animsition\css\" />
+    <Folder Include="home\static\vendor\animsition\js\" />
+    <Folder Include="home\static\vendor\bootstrap\" />
+    <Folder Include="home\static\vendor\bootstrap\css\" />
+    <Folder Include="home\static\vendor\bootstrap\js\" />
+    <Folder Include="home\static\vendor\countdowntime\" />
+    <Folder Include="home\static\vendor\css-hamburgers\" />
+    <Folder Include="home\static\vendor\daterangepicker\" />
+    <Folder Include="home\static\vendor\jquery\" />
+    <Folder Include="home\static\vendor\perfect-scrollbar\" />
+    <Folder Include="home\static\vendor\select2\" />
+    <Folder Include="home\templates\" />
+    <Folder Include="home\templates\home\" />
+    <Folder Include="outro\" />
+    <Folder Include="outro\migrations\" />
+    <Folder Include="outro\templates\" />
+    <Folder Include="outro\templates\prof\" />
+    <Folder Include="paciente\" />
+    <Folder Include="paciente\migrations\" />
+    <Folder Include="paciente\templates\" />
+    <Folder Include="plano\" />
+    <Folder Include="plano\migrations\" />
+    <Folder Include="plano\templates\" />
+    <Folder Include="presenca\" />
+    <Folder Include="presenca\migrations\" />
+    <Folder Include="presenca\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="agenda\templates\agenda.html" />
+    <Content Include="caixa\templates\retirada.html" />
+    <Content Include="caixa\templates\fechar.html" />
+    <Content Include="caixa\templates\entrada.html" />
+    <Content Include="caixa\templates\caixa.html" />
+    <Content Include="conta\templates\editar_conta.html" />
+    <Content Include="conta\templates\edita_conta.html" />
+    <Content Include="conta\templates\paga_conta.html" />
+    <Content Include="conta\templates\nova_conta.html" />
+    <Content Include="conta\templates\conta.html" />
+    <Content Include="home\static\css\main.css" />
+    <Content Include="home\static\css\simple-sidebar.css" />
+    <Content Include="home\static\css\util.css" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="home\static\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="home\static\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="home\static\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="home\static\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="home\static\img\bg-01.jpg" />
+    <Content Include="home\static\img\cabecalho.png" />
+    <Content Include="home\static\img\caixa.png" />
+    <Content Include="home\static\img\cancel.png" />
+    <Content Include="home\static\img\clientes.png" />
+    <Content Include="home\static\img\contas.png" />
+    <Content Include="home\static\img\editar.png" />
+    <Content Include="home\static\img\fechar.png" />
+    <Content Include="home\static\img\func.png" />
+    <Content Include="home\static\img\fundo1.jpg" />
+    <Content Include="home\static\img\fundo_erro.jpg" />
+    <Content Include="home\static\img\icons\favicon.ico" />
+    <Content Include="home\static\img\icons\map-marker.png" />
+    <Content Include="home\static\img\imagem.png" />
+    <Content Include="home\static\img\imprimir.png" />
+    <Content Include="home\static\img\inf_geral.png" />
+    <Content Include="home\static\img\inf_mens.png" />
+    <Content Include="home\static\img\inf_sem.png" />
+    <Content Include="home\static\img\Logo.png" />
+    <Content Include="home\static\img\ordens.png" />
+    <Content Include="home\static\img\outros.png" />
+    <Content Include="home\static\img\outros1.png" />
+    <Content Include="home\static\img\plus.png" />
+    <Content Include="home\static\img\produtos.png" />
+    <Content Include="home\static\img\retirada.png" />
+    <Content Include="home\static\img\sair.png" />
+    <Content Include="home\static\img\servicos.png" />
+    <Content Include="home\static\js\main.js" />
+    <Content Include="home\static\js\map-custom.js" />
+    <Content Include="home\static\vendor\animate\animate.css" />
+    <Content Include="home\static\vendor\animsition\css\animsition.css" />
+    <Content Include="home\static\vendor\animsition\css\animsition.min.css" />
+    <Content Include="home\static\vendor\animsition\js\animsition.js" />
+    <Content Include="home\static\vendor\animsition\js\animsition.min.js" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="home\static\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="home\static\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="home\static\vendor\bootstrap\js\popper.js" />
+    <Content Include="home\static\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="home\static\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="home\static\vendor\countdowntime\countdowntime.js" />
+    <Content Include="home\static\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="home\static\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="home\static\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="home\static\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="home\static\vendor\daterangepicker\moment.js" />
+    <Content Include="home\static\vendor\daterangepicker\moment.min.js" />
+    <Content Include="home\static\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="home\static\vendor\jquery\jquery.js" />
+    <Content Include="home\static\vendor\jquery\jquery.min.js" />
+    <Content Include="home\static\vendor\jquery\jquery.min.map" />
+    <Content Include="home\static\vendor\jquery\jquery.slim.js" />
+    <Content Include="home\static\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="home\static\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="home\static\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="home\static\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="home\static\vendor\select2\select2.css" />
+    <Content Include="home\static\vendor\select2\select2.js" />
+    <Content Include="home\static\vendor\select2\select2.min.css" />
+    <Content Include="home\static\vendor\select2\select2.min.js" />
+    <Content Include="home\templates\base.html" />
+    <Content Include="home\templates\home\erro.html" />
+    <Content Include="home\templates\home\home.html" />
+    <Content Include="home\templates\home\login.html" />
+    <Content Include="outro\templates\anual.html" />
+    <Content Include="outro\templates\prof\busca_prof.html" />
+    <Content Include="outro\templates\prof\editar_prof.html" />
+    <Content Include="outro\templates\prof\novo_prof.html" />
+    <Content Include="outro\templates\prof\prof.html" />
+    <Content Include="outro\templates\trimestral.html" />
+    <Content Include="outro\templates\mensal.html" />
+    <Content Include="outro\templates\diario.html" />
+    <Content Include="outro\templates\outro.html" />
+    <Content Include="outro\templates\balanco.html" />
+    <Content Include="paciente\templates\busca_pac.html" />
+    <Content Include="paciente\templates\edita_pac.html" />
+    <Content Include="paciente\templates\novo_pac.html" />
+    <Content Include="paciente\templates\paciente.html" />
+    <Content Include="plano\templates\busca_plano.html" />
+    <Content Include="plano\templates\editar_plano.html" />
+    <Content Include="plano\templates\novo_plano.html" />
+    <Content Include="plano\templates\plano.html" />
+    <Content Include="presenca\templates\presenca.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

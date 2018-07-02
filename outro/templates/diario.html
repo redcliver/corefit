@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar menu-lateral">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros" style="color: #599a80;">Outros <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/plano" style="color: #599a80;">Planos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/profissionais" style="color: #599a80;">Profissionais <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/balanco" style="color: #599a80;">Balanco <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/anual" style="color: #599a80;">- Anual <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/trimestral" style="color: #599a80;">- Trimestral <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/outros/mensal" style="color: #599a80;">- Mensal <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/outros/diario" style="background-color: #599a80;">- Diario <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/conta" style="color: #599a80;">Contas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/caixa" style="color: #599a80;">Caixa <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+         </nav>
+        </div>
+    </div>
+<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main-fundo">
+    <section class="row text-center placeholders">
+        <div class="jumbotron busca">
+            <div class="container">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row ">
+                            <input type="date" class="form-control col-md-3 "  name="data">
+                            &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary " style="background-color: #599a80; border-color:#235440;">Buscar</button>
+                        </div>
+                    </form>
+                    <div class="col-md-12 col-md-offset-3">
+                        <table class="table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descricao</th>
+                                <th>Total</th>
+                            </tr>
+                            {% for caixa_geral in caixas %}
+                            <tr>
+                                <td>{{caixa_geral.id}}</td>
+                                <td>{{caixa_geral.data}}</td>
+                                <td>{{caixa_geral.get_tipo_display}}</td>
+                                <td>{{caixa_geral.desc}}</td>
+                                <td>{{caixa_geral.total}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80; border-color:#235440;">Imprimir</button>
+                    </div>
+            </div>
+        </div>
+    </section>
+</main>
+        {% endblock %}
