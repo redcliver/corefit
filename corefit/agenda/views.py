@@ -1,21 +1,23 @@
 from django.shortcuts import render
-from django.utils.timezone import datetime
+from django.utils import timezone
+from agenda.models import agendamento
+from paciente.models import paciente
+from outro.models import professor
+
 # Create your views here.
-def agenda1(request):
+def agenda(request):
     if request.user.is_authenticated():
-        hoje = datetime.today().strftime('%d de %B de %Y')
-        dia_sem = datetime.today().strftime('%A, %d de %B de %Y')
-        sem = datetime.today().strftime('%a')
-        if sem == 'Mon':
-            dia = 1
-        elif sem == 'Tue':
-            dia = 2
-        elif sem == 'Wed':
-            dia = 3
-        elif sem == 'Thu':
-            dia = 4
-        elif sem == 'Fri':
-            dia = 5
+        hoje = timezone.now().strftime('%d de %B de %Y')
+        dia = timezone.now().strftime('%a')
+        
         return render(request, 'agenda.html', {'title':'Agenda', 'hoje':hoje, 'dia':dia})
+    else:
+        return render(request, 'home/erro.html', {'title':'Erro'})
+
+def novo(request):
+    if request.user.is_authenticated():
+        pacientes = paciente.objects.all()
+        profissionais = professor.objects.all()
+        return render(request, 'novo.html', {'title':'Novo Agendamento', 'pacientes':pacientes, 'profissionais':profissionais})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})

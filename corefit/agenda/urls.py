@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.agenda1),
-    url(r'^nova', views.agenda1),
+    url(r'^$', views.agenda),
+    url(r'^novo', views.novo),
     ]

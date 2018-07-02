@@ -9,7 +9,7 @@
                     <a class="nav-link active" href="/agenda" style="background-color: #599a80;">Agenda <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/plano" style="color: #599a80;">Editar <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " href="/agenda/novo" style="color: #599a80;">Novo Agendamento <span class="sr-only">(current)</span></a>
                 </li>
                 
             </ul>
@@ -21,65 +21,99 @@
         <div class="jumbotron busca">
             <div class="container">
                 <div class="container">
-                    {% if dia == 1 %}
+                    {% if dia == "Mon" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/seg.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == 2 %}
+                    {% elif dia == "Tue" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == 3 %}
+                    {% elif dia == "Wed" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == 4 %}
+                    {% elif dia == "Thu" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == 5 %}
+                    {% elif dia == "Fri" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/sex.png' %}" /></button>
                     {% endif %}
-                    <label class="ml-auto float-right" style="font-size: 30px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);">{{hoje}}</label><br />
+                    <label class="ml-auto float-right" style="font-size: 20px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);">{{hoje}}</label><br />
+                    <select name="profissional" class="ml-auto float-right" >
+                        <option disabled selected> -- Professores -- </option>
+                        {% for professor in professores %}
+                            <option value="{{professor.id}}">{{professor.nome}}</option>
+                        {% endfor %}
+                    </select>
                     <table class="table table-hover">
                       <thead>
                         <tr>
                           <th scope="col">Horario</th>
                           <th scope="col">Aluno(a)</th>
-                          <th scope="col">Prof.</th>
-                          <th scope="col">Handle</th>
+                          <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
+                          <th scope="row">07:00</th>
                           <td>Mark</td>
                           <td>Otto</td>
-                          <td>@mdo</td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
+                          <th scope="row">08:00</th>
                           <td>Jacob</td>
                           <td>Thornton</td>
-                          <td>@fat</td>
                         </tr>
                         <tr>
-                          <th scope="row">3</th>
+                          <th scope="row">09:00</th>
                           <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
                         </tr>
+                        <tr>
+                            <th scope="row">10:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">15:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">16:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">17:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">18:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">19:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">20:00</th>
+                            <td colspan="2">Larry the Bird</td>
+                          </tr>
                       </tbody>
                     </table>
                 </div>
