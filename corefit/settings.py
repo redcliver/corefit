@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import posixpath
-#import dj_database_url
-#import django_heroku
+import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,9 @@ SECRET_KEY = 'f483ec50-3070-41cb-bb68-447bda887083'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'corefit.herokuapp.com',
+    ]
 
 
 # Application definition
@@ -62,6 +64,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'corefit.urls'
@@ -148,4 +151,4 @@ FINGERPRINTING = {
 LOGIN_REDIRECT_URL = '/home'
 
 # Activate Django-Heroku.
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
