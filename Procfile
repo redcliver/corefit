@@ -1,1 +1,1 @@
-web: gunicorn corefit.wsgi 
+web: gunicorn corefit.wsgi
