@@ -24,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f483ec50-3070-41cb-bb68-447bda887083'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'corefit.herokuapp.com',
+    'localhost',
     ]
 
 
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_fingerprinting',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -99,8 +99,8 @@ DATABASES = {
         'PORT': '', # 8000 is default
         }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -141,10 +141,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
-
-FINGERPRINTING = {
-    'css/global.css': 'css/global-234f-2321db-74fce-34de.css'
-}
 
 LOGIN_REDIRECT_URL = '/home'
 
