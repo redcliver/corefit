@@ -1,1 +1,1 @@
-web: gunicorn corefit.wsgi --log-file -
+gunicorn corefit.wsgi:application --preload --workers 1
