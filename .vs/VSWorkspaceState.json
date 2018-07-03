@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\corefit",
-    "\\corefit\\home",
-    "\\corefit\\home\\static",
-    "\\corefit\\home\\static\\vendor",
-    "\\corefit\\home\\static\\vendor\\bootstrap",
-    "\\corefit\\home\\static\\vendor\\bootstrap\\css",
-    "\\corefit\\outro",
-    "\\corefit\\paciente",
-    "\\corefit\\paciente\\migrations"
+    "\\corefit"
   ],
-  "SelectedNode": "\\corefit\\paciente\\migrations\\__init__.py",
   "PreviewInSolutionExplorer": false
 }
