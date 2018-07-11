@@ -25,7 +25,7 @@ def novo(request):
 
 def editar(request):
     if request.user.is_authenticated():
-        planos = plano.objects.all()
+        planos = plano.objects.all().order_by('nome')
         if request.method == 'POST' and request.POST.get('plano_id') != None:
             plano_id = request.POST.get('plano_id')
             plan = plano.objects.filter(id=plano_id).get()
