@@ -8,6 +8,7 @@ def pacient(request):
 
 def novo_pac(request):
     if request.user.is_authenticated():
+        professores = professor.objects.all().order_by('nome')
         if request.method == 'POST' and request.POST.get('name') != None :
             nome = request.POST.get('name')
             tel = request.POST.get('tel')
@@ -24,7 +25,7 @@ def novo_pac(request):
                 novo_paciente.save()
             msg = "Novo paciente cadastrado com sucesso!"
             return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-        return render(request, 'novo_pac.html', {'title':'Novo Paciente'})
+        return render(request, 'novo_pac.html', {'title':'Novo Paciente', 'professores':professores})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})
     
@@ -35,7 +36,7 @@ def busca_pac(request):
         if request.method == 'POST' and request.POST.get('pac_id'):
             pac_id = request.POST.get('pac_id')
             pac_obj = paciente.objects.filter(id=pac_id).get()
-            professores = professor.objects.all()
+            professores = professor.objects.all().order_by('nome')
             return render(request, 'edita_pac.html', {'title':'Editar Paciente', 'pac_obj':pac_obj, 'professores':professores})
         return render(request, 'busca_pac.html', {'title':'Buscar Paciente', 'pacs':pacs})
     else:
