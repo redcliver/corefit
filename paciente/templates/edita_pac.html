@@ -60,12 +60,12 @@
                         <input type="text" class="form-control" value="{{pac_obj.plan1.nome}}" disabled>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="inputEmail">Atual. Plano</label><br />
+                        <label for="inputEmail">Plano</label><br />
                         <select name="periodo" class="form-control" required>
                             <option disabled selected> -- Periodo -- </option>
-                            <option value="1">Avulsa</option>
-                            <option value="2">Mensal</option>
-                            <option value="3">Trimestral</option>
+                            {% for plano in planos %}
+                            <option value="{{plano.id}}">{{plano.nome}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="form-group col-md-3">

@@ -9,6 +9,7 @@ def pacient(request):
 def novo_pac(request):
     if request.user.is_authenticated():
         professores = professor.objects.all().order_by('nome')
+        planos = plano.objects.all().order_by('nome')
         if request.method == 'POST' and request.POST.get('name') != None :
             nome = request.POST.get('name')
             tel = request.POST.get('tel')
@@ -25,7 +26,7 @@ def novo_pac(request):
                 novo_paciente.save()
             msg = "Novo paciente cadastrado com sucesso!"
             return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
-        return render(request, 'novo_pac.html', {'title':'Novo Paciente', 'professores':professores})
+        return render(request, 'novo_pac.html', {'title':'Novo Paciente', 'professores':professores, 'planos':planos})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})
     
