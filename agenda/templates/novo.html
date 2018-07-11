@@ -25,7 +25,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Paciente <strong>*</strong></label><br>
-                        <select name="pac" class="" >
+                        <select name="pac" class="form-control" >
                             <option disabled selected> -- Pacientes -- </option>
                             {% for paciente in pacientes %}
                                 <option value="{{paciente.id}}">{{paciente.nome}}</option>
