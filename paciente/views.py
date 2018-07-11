@@ -17,13 +17,26 @@ def novo_pac(request):
             cel =request.POST.get('cel')
             data_nasc = request.POST.get('data_nasc')
             atv = request.POST.get('ativo')
+            periodo = request.POST.get('periodo')
+            data_v = request.POST.get('data_v')
+            prof = request.POST.get('profissional')
             queixa = request.POST.get('queixa')
             objetivo = request.POST.get('objetivo')
             try:
-                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, data_nasc=data_nasc, ativo=atv, queixa=queixa, objetivo=objetivo)
+                profissional = professor.objects.filter(id=prof).get()
+            except:
+                profissional = None
+
+            try:
+                peri = plano.objects.filter(id=periodo).get()
+            except:
+                peri = None
+
+            try:
+                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, data_nasc=data_nasc, ativo=atv, data_venc=data_v, prof1=profissional, plan1=peri, queixa=queixa, objetivo=objetivo)
                 novo_paciente.save()
             except:
-                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, ativo=atv, queixa=queixa, objetivo=objetivo)
+                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, ativo=atv, data_venc=data_v, prof1=profissional, plan1=peri, queixa=queixa, objetivo=objetivo)
                 novo_paciente.save()
             msg = "Novo paciente cadastrado com sucesso!"
             return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
