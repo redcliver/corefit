@@ -17,7 +17,7 @@ def agenda(request):
 def novo(request):
     if request.user.is_authenticated():
         pacientes = paciente.objects.all()
-        profissionais = professor.objects.all()
-        return render(request, 'novo.html', {'title':'Novo Agendamento', 'pacientes':pacientes, 'profissionais':profissionais})
+        professores = professor.objects.all().order_by('nome')
+        return render(request, 'novo.html', {'title':'Novo Agendamento', 'pacientes':pacientes, 'professores':professores})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})
