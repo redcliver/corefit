@@ -9,8 +9,8 @@ def agenda(request):
     if request.user.is_authenticated():
         hoje = timezone.now().strftime('%d de %B de %Y')
         dia = timezone.now().strftime('%a')
-        
-        return render(request, 'agenda.html', {'title':'Agenda', 'hoje':hoje, 'dia':dia})
+        professores = professor.objects.all().order_by('nome')
+        return render(request, 'agenda.html', {'title':'Agenda', 'hoje':hoje, 'dia':dia, 'professores':professores})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})
 
