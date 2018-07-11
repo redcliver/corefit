@@ -33,7 +33,7 @@ def novo_prof(request):
 
 def editar_prof(request):
     if request.user.is_authenticated():
-        profs = professor.objects.all()
+        profs = professor.objects.all().order_by('nome')
         if request.method == 'POST' and request.POST.get('prof_id') != None:
             prof_id = request.POST.get('prof_id')
             prof = professor.objects.filter(id=prof_id).get()
