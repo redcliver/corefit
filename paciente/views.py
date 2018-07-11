@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import paciente
 from outro.models import professor
+from plano.models import plano
 from django.utils.dateparse import parse_date
 # Create your views here.
 def pacient(request):
