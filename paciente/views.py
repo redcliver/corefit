@@ -20,7 +20,7 @@ def novo_pac(request):
                 novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, data_nasc=data_nasc, ativo=atv, queixa=queixa, objetivo=objetivo)
                 novo_paciente.save()
             except:
-                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, queixa=queixa, objetivo=objetivo)
+                novo_paciente = paciente(nome=nome, telefone=tel, celular=cel, ativo=atv, queixa=queixa, objetivo=objetivo)
                 novo_paciente.save()
             msg = "Novo paciente cadastrado com sucesso!"
             return render(request, 'home/home.html', {'title':'Home', 'msg':msg})
