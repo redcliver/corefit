@@ -32,43 +32,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="form-group col-md-12">
-                        <label for="inputName">Profissional <strong>*</strong></label><br>
-                        <select name="pro" class="ml-auto" >
-                            <option disabled selected> -- Profissionais -- </option>
-                            {% for professor in profissionais %}
-                                <option value="{{professor.id}}">{{professor.nome}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group col-md-8">
-                        <label for="inputEmail">Dia da Sem.</label><br>
-                        <select name="dia_sem" class="ml-auto" >
-                            <option disabled selected> -- Dias -- </option>
-                            <option value="seg">Segunda</option>
-                            <option value="seg">Terca</option>
-                            <option value="seg">Quarta</option>
-                            <option value="seg">Quinta</option>
-                            <option value="seg">Sexta</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="inputName">Horario <strong>*</strong></label><br>
-                        <select name="hora" class="ml-auto" >
-                            <option disabled selected> -- Horarios -- </option>
-                            <option value="1">07:00</option>
-                            <option value="1">08:00</option>
-                            <option value="1">09:00</option>
-                            <option value="1">10:00</option>
-                            <option value="1">11:00</option>
-                            <option value="1">15:00</option>
-                            <option value="1">16:00</option>
-                            <option value="1">17:00</option>
-                            <option value="1">18:00</option>
-                            <option value="1">19:00</option>
-                            <option value="1">20:00</option>
-                        </select>
-                    </div>
+                </div>
                 <br />
                 <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Salvar</button>
             </form>
