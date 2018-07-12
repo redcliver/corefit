@@ -1,6 +1,7 @@
 from django.db import models
 from outro.models import professor
 from plano.models import plano
+from django.utils import timezone
 
 # Create your models here.
 class paciente(models.Model):
@@ -19,6 +20,14 @@ class paciente(models.Model):
     ativo = models.CharField(max_length=1, choices=OPCAO)
     prof1 = models.ForeignKey(professor)
     plan1 = models.ForeignKey(plano)
+    pag1 = models.ManyToManyField(pagamento)
 
     def __str__(self):
         return self.nome
+
+class pagamento(models.Model):
+    id = models.AutoField(primary_key=True)
+    data_pag = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.str(id)
