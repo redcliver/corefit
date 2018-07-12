@@ -22,20 +22,25 @@
             <h1>Novo Agendamento</h1>
             <form method="post">
                 {% csrf_token %}
+                <input type="hidden" name="pac_id" value="{{pac.id}}">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputName">Paciente <strong>*</strong></label><br>
-                        <select name="pac_id" class="form-control">
-                            <option disabled selected> -- Pacientes -- </option>
-                            {% for paciente in pacientes %}
-                            <option value="{{paciente.id}}">{{paciente.nome}}</option>
+                        <input type="text" class="form-control" value="{{pac.nome}}" disabled>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputEmail">Prof.</label><br />
+                        <select name="profissional" class="form-control" required>
+                            <option value="{{pac.prof1.id}}" selected>{{pac.prof1.nome}}</option>
+                            {% for professor in professores %}
+                            <option value="{{professor.id}}">{{professor.nome}}</option>
                             {% endfor %}
                         </select>
                     </div>
                 </div>
                 <br />
                 <div class="form-group col-md-12">
-                    <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Proximo</button>
+                    <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Agendar</button>
                 </div>
             </form>
         </div>
