@@ -23,7 +23,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="form-row">
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-12">
                         <label for="inputName">Paciente <strong>*</strong></label><br>
                         <select name="pac" class="form-control">
                             <option disabled selected> -- Pacientes -- </option>
@@ -32,10 +32,50 @@
                             {% endfor %}
                         </select>
                     </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputName">Profissional <strong>*</strong></label><br>
+                        <select name="prof" class="form-control">
+                            <option disabled selected> -- Profissionais -- </option>
+                            {% for professor in professores %}
+                            <option value="{{professor.id}}">{{professor.nome}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-4">
+                                <label for="inputName">Dia <strong>*</strong></label><br>
+                                <select name="dia" class="form-control">
+                                    <option disabled selected> -- Dias -- </option>
+                                    <option value="segunda">Segunda-Feira</option>
+                                    <option value="terca">Terça-Feira</option>
+                                    <option value="quarta">Quarta-Feira</option>
+                                    <option value="quinta">Quinta-Feira</option>
+                                    <option value="sexta">Sexta-Feira</option>
+                                </select>
+                            </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Horário <strong>*</strong></label><br>
+                        <select name="hora" class="form-control">
+                            <option disabled selected> -- Horários -- </option>
+                            <option value="07:00">07:00</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option disabled>&nbsp;</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
                 </div>
                 <br />
-                <div class="form-group col-md-8">
-                    <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Próximo</button>
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Agendar</button>
                 </div>
             </form>
         </div>

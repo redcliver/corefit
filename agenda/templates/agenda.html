@@ -47,7 +47,7 @@
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
                     {% elif dia == "Fri" %}
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/ter.png' %}" /></button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
                         <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/sex.png' %}" /></button>
@@ -68,52 +68,60 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">07:00</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">08:00</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">09:00</th>
-                          <td colspan="2">Larry the Bird</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10:00</th>
+                            {% for agendamento in agendas %}
+                            <tr>
+                                {% if agendamento.horario == "07:00" %}
+                                <th scope="row">07:00</th>
+                                <td>{{agendamento.aluno}}</td>
+                                <td>Edtar</td>
+                                {% else %}
+                                <th scope="row">07:00</th>
+                                <td>Livre</td>
+                                <td>Agendar</td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                            <th scope="row">08:00</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">09:00</th>
                             <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">11:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">15:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">16:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">17:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">18:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">19:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">20:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                          </tr>
+                            </tr>
+                            <tr>
+                                <th scope="row">10:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">16:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">19:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">20:00</th>
+                                <td colspan="2">Larry the Bird</td>
+                            </tr>
+                            {% endfor %}
                       </tbody>
                     </table>
                 </div>

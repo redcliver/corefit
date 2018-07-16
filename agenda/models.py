@@ -7,8 +7,8 @@ from django.utils import timezone
 class agendamento(models.Model):
     id = models.AutoField(primary_key=True)
     aluno = models.ForeignKey(paciente)
-    horario = models.TimeField()
-    data = models.DateField()
+    hora = models.CharField(max_length=5)
+    data = models.CharField(max_length=10)
     prof1 = models.ForeignKey(professor)
     
     def __str__(self):
