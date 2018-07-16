@@ -43,17 +43,62 @@
                     </div>
                 </div>
                 <div class="form-row">
+                    {% if dia == '1' %}
                         <div class="form-group col-md-4">
-                                <label for="inputName">Dia <strong>*</strong></label><br>
+                            <label for="inputName">Dia <strong>*</strong></label><br>
                                 <select name="dia" class="form-control">
-                                    <option disabled selected> -- Dias -- </option>
-                                    <option value="segunda">Segunda-Feira</option>
-                                    <option value="terca">Terça-Feira</option>
-                                    <option value="quarta">Quarta-Feira</option>
-                                    <option value="quinta">Quinta-Feira</option>
-                                    <option value="sexta">Sexta-Feira</option>
-                                </select>
-                            </div>
+                                <option value="1" selected>Segunda-Feira -- {{d1}}</option>
+                                <option value="2">Terça-Feira -- {{d2}}</option>
+                                <option value="3">Quarta-Feira -- {{d3}}</option>
+                                <option value="4">Quinta-Feira -- {{d4}}</option>
+                                <option value="5">Sexta-Feira -- {{d5}}</option>
+                            </select>
+                        </div>
+                    {% elif dia == '2' %}
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Dia <strong>*</strong></label><br>
+                                <select name="dia" class="form-control">
+                                <option value="1" >Segunda-Feira -- {{d1}}</option>
+                                <option value="2" selected>Terça-Feira -- {{d2}}</option>
+                                <option value="3">Quarta-Feira -- {{d3}</option>
+                                <option value="4">Quinta-Feira -- {{d4}}</option>
+                                <option value="5">Sexta-Feira -- {{d5}}</option>
+                            </select>
+                        </div>
+                    {% elif dia == '3' %}
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Dia <strong>*</strong></label><br>
+                                <select name="dia" class="form-control">
+                                <option value="1" >Segunda-Feira -- {{d1}}</option>
+                                <option value="2">Terça-Feira -- {{d2}}</option>
+                                <option value="3" selected>Quarta-Feira -- {{d3}}</option>
+                                <option value="4">Quinta-Feira -- {{d4}}</option>
+                                <option value="5">Sexta-Feira -- {{d5}}</option>
+                            </select>
+                        </div>
+                    {% elif dia == '4' %}
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Dia <strong>*</strong></label><br>
+                                <select name="dia" class="form-control">
+                                <option value="1" >Segunda-Feira -- {{d1}}</option>
+                                <option value="2">Terça-Feira -- {{d2}}</option>
+                                <option value="3">Quarta-Feira -- {{d3}}</option>
+                                <option value="4" selected>Quinta-Feira -- {{d4}}</option>
+                                <option value="5">Sexta-Feira -- {{d5}}</option>
+                            </select>
+                        </div>
+                    {% elif dia == '5' %}
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Dia <strong>*</strong></label><br>
+                                <select name="dia" class="form-control">
+                                <option value="1" >Segunda-Feira -- {{d1}}</option>
+                                <option value="2">Terça-Feira -- {{d2}}</option>
+                                <option value="3">Quarta-Feira -- {{d3}}</option>
+                                <option value="4">Quinta-Feira -- {{d4}}</option>
+                                <option value="5" selected>Sexta-Feira -- {{d5}}</option>
+                            </select>
+                        </div>
+                    {% endif %}
                     <div class="form-group col-md-4">
                         <label for="inputName">Horário <strong>*</strong></label><br>
                         <select name="hora" class="form-control">
@@ -70,6 +115,15 @@
                             <option value="18:00">18:00</option>
                             <option value="19:00">19:00</option>
                             <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Plano <strong>*</strong></label><br>
+                        <select name="plan" class="form-control">
+                            <option disabled selected> -- Planos -- </option>
+                            {% for plano in planos %}
+                                <option value="{{plano.id}}">{{plano.nome}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                 </div>

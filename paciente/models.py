@@ -18,8 +18,8 @@ class paciente(models.Model):
     queixa = models.CharField(max_length=500, null=True, blank=True)
     objetivo = models.CharField(max_length=500, null=True, blank=True)
     ativo = models.CharField(max_length=1, choices=OPCAO)
-    prof1 = models.ForeignKey(professor, on_delete=models.CASCADE)
-    plan1 = models.ForeignKey(plano, on_delete=models.CASCADE)
+    prof1 = models.ForeignKey(professor, on_delete=models.CASCADE, null=True)
+    plan1 = models.ForeignKey(plano, on_delete=models.CASCADE, null=True)
     
 
     def __str__(self):
