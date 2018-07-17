@@ -21,44 +21,56 @@
         <div class="jumbotron busca">
             <div class="container">
                 <div class="container">
-                    {% if dia == "Mon" %}
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == "Tue" %}
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/ter.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == "Wed" %}
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qua.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == "Thu" %}
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qui.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% elif dia == "Fri" %}
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/sex.png' %}" /></button>
-                    {% endif %}
-                    <label class="ml-auto float-right" style="font-size: 20px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);">{{hoje}}</label><br />
-                    <select name="profissional" class="ml-auto float-right" >
-                        <option disabled selected> -- Professores -- </option>
-                        {% for professor in professores %}
-                            <option value="{{professor.id}}">{{professor.nome}}</option>
-                        {% endfor %}
-                    </select>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                        {% if dia == "Mon" %}
+                            <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/seg.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
+                        {% elif dia == "Tue" %}
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/ter.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
+                        {% elif dia == "Wed" %}
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qua.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
+                        {% elif dia == "Thu" %}
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/qui.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/sex.png' %}" /></button>
+                        {% elif dia == "Fri" %}
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/seg.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/ter.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qua.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;"><img src="{% static '/img/qui.png' %}" /></button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;"><img src="{% static '/img/sex.png' %}" /></button>
+                        {% endif %}
+                        <br><label class="ml-auto" style="font-size: 20px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);">{{prof.nome}}&nbsp;&nbsp;--&nbsp;&nbsp;</label>
+                        <label class="ml-auto" style="font-size: 20px; color:#1e9968; text-shadow: 3px 1px 4px rgba(150, 150, 150, 1);">{{hoje}}</label>
+                        </div>
+                        <div class="form-group col-md-4">
+                        <input type="date" name="data_busca" class="ml-auto"><br>
+                        <select name="profissional" class="ml-auto" >
+                            <option disabled selected> -- Professores -- </option>
+                            {% for professor in professores %}
+                                <option value="{{professor.id}}">{{professor.nome}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-primary" style="background-color: #2c604b; border-color: #2c604b;">Buscar</button>
+                        </div>
+                    </div>
+                    </form>
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -69,58 +81,11 @@
                       </thead>
                       <tbody>
                             {% for agendamento in agendas %}
-                            <tr>
-                                {% if agendamento.horario == "07:00" %}
-                                <th scope="row">07:00</th>
-                                <td>{{agendamento.aluno}}</td>
-                                <td>Edtar</td>
-                                {% else %}
-                                <th scope="row">07:00</th>
-                                <td>Livre</td>
-                                <td>Agendar</td>
-                                {% endif %}
-                            </tr>
-                            <tr>
-                            <th scope="row">08:00</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">09:00</th>
-                            <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">10:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">15:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">16:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">17:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">18:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">19:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">20:00</th>
-                                <td colspan="2">Larry the Bird</td>
-                            </tr>
+                                <tr>
+                                    <td>{{agendamento.data|date:"H:i"}}</td>
+                                    <td>{{agendamento.aluno}}</td>
+                                    <td><button type="submit" class="btn btn-primary" style="background-color: #599a80;">Editar</button></td>
+                                </tr>
                             {% endfor %}
                       </tbody>
                     </table>

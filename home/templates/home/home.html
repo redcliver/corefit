@@ -17,7 +17,16 @@
         <div class="jumbotron busca">
             <div class="container">
                 {% if msg %}
-                    <h2>{{msg}}</h2>
+                    <h3>{{msg}}</h3>
+                    {% if novo_age %}
+                        <hr />
+                        <h4>Paciente: {{novo_age.aluno}}</h4>
+                        <h4>Data: {{data}}</h4>
+                        <h4>Prof: {{novo_age.prof1.nome}}</h4>
+                        <h4>Plano: {{novo_age.aluno.plan1}}</h4>
+                        <h4>Data de Vencimento: {{novo_age.aluno.data_venc}}</h4>
+                        <button type="submit" class="btn btn-primary float-right" style="background-color: #599a80;">Imprimir</button>
+                    {% endif %}
                 {% else %}
                     <h3>Ola</h3>
                     <hr />
