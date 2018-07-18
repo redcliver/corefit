@@ -427,3 +427,94 @@ def novo_23(request):
             return render(request, 'novo_23.html', {'title':'Novo Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5})
     else:
         return render(request, 'home/erro.html', {'title':'Erro'})
+
+def editar(request):
+    if request.user.is_authenticated():
+        pacientes = paciente.objects.all().order_by('nome')
+        professores = professor.objects.all().order_by('nome')
+        planos = plano.objects.all().order_by('nome')
+        agenda_id = request.GET.get('agenda_id')
+        agenda_obj = agendamento.objects.filter(id=agenda_id).get()
+        dia = agenda_obj.data.strftime('%w')
+        d = agenda_obj.data.strftime('%d')
+        m = agenda_obj.data.strftime('%m')
+        y = agenda_obj.data.strftime('%Y')
+        if request.method == 'POST' and request.POST.get('plan') == '2':
+            age_id = request.POST.get('age_id')
+            age_obj = agendamento.objects.filter(id=age_id).get()
+            pac_id = request.POST.get('pac')
+            pac = paciente.objects.filter(id=pac_id).get()
+            prof_id = request.POST.get('prof')
+            prof = professor.objects.filter(id=prof_id).get()
+            horario = request.POST.get('hora')
+            dia = request.POST.get('dia')
+            data_obj = datetime.strptime(''+y+' '+m+' '+dia+' '+horario+'', '%Y %m %d %H:%M')
+            age_obj.aluno = pac
+            age_obj.prof1 = prof
+            age_obj.data = data_obj
+            age_obj.save()
+            if data_obj.strftime('%w') == '1':
+                data = "Segunda-Feira as "+horario+""  
+                msg = "Agendamento editado com sucesso."
+                return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj, 'data':data})
+            elif data_obj.strftime('%w') == '2':
+                data = "Terca-Feira as "+horario+""  
+                msg = "Agendamento editado com sucesso."
+                return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj, 'data':data})
+            elif data_obj.strftime('%w') == '3':
+                data = "Quarta-Feira as "+horario+""
+                msg = "Agendamento editado com sucesso."
+                return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj, 'data':data})
+            elif data_obj.strftime('%w') == '4':
+                data = "Quinta-Feira as "+horario+"" 
+                msg = "Agendamento editado com sucesso."
+                return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj, 'data':data})
+            elif data_obj.strftime('%w') == '5':
+                data = "Sexta-Feira as "+horario+""
+                msg = "Agendamento editado com sucesso."
+                return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj, 'data':data})
+            msg = "Agendamento editado com sucesso."
+            return render(request, 'home/home.html', {'title':'Home', 'msg':msg, 'age_obj':age_obj})
+        if dia == '1':
+            d1 = str(d)
+            d2 = str(int(d)+1)
+            d3 = str(int(d)+2)
+            d4 = str(int(d)+3)
+            d5 = str(int(d)+4)
+            
+            return render(request, 'editar.html', {'title':'Editar Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5, 'm':m, 'agenda_obj':agenda_obj})
+        if dia == '2':
+            d1 = str(int(d)-1)
+            d2 = str(d)
+            d3 = str(int(d)+1)
+            d4 = str(int(d)+2)
+            d5 = str(int(d)+3)
+            
+            return render(request, 'editar.html', {'title':'Editar Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5, 'm':m, 'agenda_obj':agenda_obj})
+        if dia == '3':
+            d1 = str(int(d)-2)
+            d2 = str(int(d)-1)
+            d3 = str(d)
+            d4 = str(int(d)+1)
+            d5 = str(int(d)+2)
+            
+            return render(request, 'editar.html', {'title':'Editar Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5, 'm':m, 'agenda_obj':agenda_obj})
+        if dia == '4':
+            d1 = str(int(d)-3)
+            d2 = str(int(d)-2)
+            d3 = str(int(d)-1)
+            d4 = str(d)
+            d5 = str(int(d)+1)
+            
+            return render(request, 'editar.html', {'title':'Editar Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5, 'm':m, 'agenda_obj':agenda_obj})
+        if dia == '5':
+            d1 = str(int(d)-4)
+            d2 = str(int(d)-3)
+            d3 = str(int(d)-2)
+            d4 = str(int(d)-1)
+            d5 = str(d)
+            
+            return render(request, 'editar.html', {'title':'Editar Agendamento', 'pacientes':pacientes, 'professores':professores, 'dia':dia, 'planos':planos, 'd1':d1, 'd2':d2, 'd3':d3, 'd4':d4, 'd5':d5, 'm':m, 'agenda_obj':agenda_obj})
+        return render(request, 'editar.html', {'title':'Editar Agenda'})
+    else:
+        return render(request, 'home/erro.html', {'title':'Erro'})

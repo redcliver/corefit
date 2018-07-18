@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^21', views.novo_21),
     url(r'^22', views.novo_22),
     url(r'^23', views.novo_23),
+    url(r'^editar', views.editar),
     ]

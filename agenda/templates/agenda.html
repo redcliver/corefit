@@ -82,9 +82,12 @@
                       <tbody>
                             {% for agendamento in agendas %}
                                 <tr>
+                                    <form method="GET" action="/agenda/editar">
+                                    <input type="hidden" name="agenda_id" value="{{agendamento.id}}">
                                     <td>{{agendamento.data|date:"H:i"}}</td>
                                     <td>{{agendamento.aluno}}</td>
-                                    <td><button type="submit" class="btn btn-primary" style="background-color: #599a80;">Editar</button></td>
+                                    <td><button type="submit" class="btn btn-primary" style="background-color: #599a80; border-color: #599a80;">Editar</button></td>
+                                    </form>
                                 </tr>
                             {% endfor %}
                       </tbody>
