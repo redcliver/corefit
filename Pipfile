@@ -30,7 +30,7 @@ six = "==1.10.0"
 "urllib3" = "==1.22"
 whitenoise = "==3.3.0"
 wrapt = "==1.10.11"
-Django = "==1.11.4"
+Django = "==1.11.28"
 Pillow = "==4.2.1"
 PyYAML = "==3.12"
 
