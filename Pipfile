@@ -32,7 +32,7 @@ whitenoise = "==3.3.0"
 wrapt = "==1.10.11"
 Django = "==1.11.4"
 Pillow = "==4.2.1"
-PyYAML = "==3.12"
+PyYAML = "==5.4"
 
 [dev-packages]
 pylint = "*"
